@@ -1,5 +1,7 @@
 package edu.cibertec.proyecto.entity;
 
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,6 +13,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ProductosModelo {
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idProducto;
 	private String name;
 	private String idCliente;
