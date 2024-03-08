@@ -2,16 +2,10 @@ package edu.cibertec.proyecto.entity;
 
 import java.util.Date;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
 
+@Builder
 @Getter
 @Setter
 @NoArgsConstructor
@@ -21,7 +15,8 @@ import lombok.Setter;
 public class VentaEntity {
 
 	@Id
-	private String ventas;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int ventas;
 	@ManyToOne
 	@JoinColumn(name = "cliente")
 	private ClienteEntity cliente;

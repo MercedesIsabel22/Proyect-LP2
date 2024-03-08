@@ -14,8 +14,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
-@Setter
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -47,4 +46,67 @@ public class OperacionEntity {
 		this.estado = estado;
 	}
 
+	public int getOperaciones() {
+		return operaciones;
+	}
+
+	public void setOperaciones(int operaciones) {
+		this.operaciones = operaciones;
+	}
+
+	public String getProceso() {
+		return proceso;
+	}
+
+	public void setProceso(String proceso) {
+		this.proceso = proceso;
+	}
+
+	public int getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(int tipo) {
+		this.tipo = tipo;
+	}
+
+	public ProductoEntity getProducto() {
+		return producto;
+	}
+
+	public void setProducto(ProductoEntity producto) {
+		this.producto = producto;
+	}
+
+	public int getCantidad() {
+		return cantidad;
+	}
+
+	public void setCantidad(int cantidad) {
+		this.cantidad = cantidad;
+	}
+
+	public Double getPreciocpa() {
+		return preciocpa;
+	}
+
+	public void setPreciocpa(Double preciocpa) {
+		this.preciocpa = preciocpa;
+	}
+
+	public Date getFechacpa() {
+		return fechacpa;
+	}
+
+	public void setFechacpa(Date fechacpa) {
+		this.fechacpa = fechacpa;
+	}
+
+	public int getEstado() {
+		return estado;
+	}
+
+	public void setEstado(int estado) {
+		this.estado = estado;
+	}
 }

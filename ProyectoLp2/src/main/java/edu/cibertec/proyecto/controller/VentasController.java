@@ -77,8 +77,14 @@ public class VentasController {
 		Date date = new Date(System.currentTimeMillis());
 		Double costosum =pastilla.stream().mapToDouble(o -> o.getCosto()).sum();
 		String codigoVTA = numbersService.buscarNumeracion(1).codigoconPrefijo();
-		VentaEntity v = new VentaEntity(codigoVTA,clientesService.buscarCliente(obj.getIdcliente()),costosum,date,1);
-		
+		VentaEntity venta = VentaEntity.builder()
+				.cliente(clientesService.buscarCliente(obj.getIdcliente()))
+				.fecha(date)
+				.precio(costosum)
+				.estado(1)
+				.build();
+
+
 		List<OperacionEntity> paquete = new ArrayList<OperacionEntity>();
 		OperacionEntity ope;
 		for (ProductosModelo cap : pastilla) {
@@ -90,7 +96,7 @@ public class VentasController {
 		}
 		pastilla = new ArrayList<ProductosModelo>();
 		operacionesService.crearMultiplesOperaciones(paquete);
-		ventasService.crearVemtas(v);
+		ventasService.crearVemtas(venta);
 		return "redirect:/ventaProductos";
 	}
 	
