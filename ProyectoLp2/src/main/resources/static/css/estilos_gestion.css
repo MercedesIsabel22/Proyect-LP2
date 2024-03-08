@@ -34,6 +34,16 @@ p{
 
 }
 
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px; /* Ajusta la altura del footer según tu diseño */
+    color: white; /* Ajusta el color del texto del footer */
+    text-align: center;
+    padding-top: 20px; /* Ajusta el espacio entre el texto y el borde superior del footer */
+}
+
 /* float: left;
 html{
     border: 2px solid red

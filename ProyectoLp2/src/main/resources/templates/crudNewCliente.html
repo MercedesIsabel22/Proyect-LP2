@@ -15,51 +15,25 @@
   </head>
 
   <body>
+  <!-- Menú - Barra superior  -->
+  <div th:replace="header_fragment :: header"></div>
     <div id="contenedor">
-      <aside>
-			<article>
-				<img src="/imagenes/logo.jpg" alt="" />
-				<p>
-					<strong>Menu de Gestion</strong>
-				</p>
-			</article>
-			<nav id="menu">
-				<ul>
-					<br>
-					<ul><a th:href="@{listar_Ctrl_Reposicion}">Gestion de Reposiciones</a></ul>
-					<br>
-					<ul><a th:href="@{comprasProductos}">Compras</a></ul>
-					<ul><a th:href="@{ventaProductos}">Ventas</a></ul>
-					<br>
-					<ul><a th:href="@{crud_Clientes}">Clientes</a></ul>
-					<ul><a th:href="@{crud_Proveedores}">Proveedores</a></ul>
-					<ul><a th:href="@{crud_Productos}">Productos</a></ul>
-					<br>
-					<br>
-					<ul><a th:href="@{autentificar}">Cerrar sesión</a></ul>
-				</ul>
-			</nav>
-			<br />
-				<p1>Desarrollado por Cibertec</p1>
-			<br /> 
-				<a href="">@copyright 2023</a>
-		</aside>
       <section>
         	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				<div class="container-fluid">
 					<h3>Nuevo Cliente</h3>
 				</div>
 			</nav>
-       
+
        <div class="card">
 		<div class="card-body">
 			<form th:action="@{/crud_ejecutar_crear_cliente}" th:object="${PaqueteC}" method="post">
 				<div>
-					<label class="form-label">RucDni</label>
+					<label class="form-label">Ruc | Dni</label>
 					<input type="text" class="form-control" th:field="*{rucdni}" >
 				</div>
 				<div>
-					<label class="form-label"> Razón Social </label>
+					<label class="form-label"> Razón Social | Nombre </label>
 					<input type="text" class="form-control" th:field="*{razonsocial}" >
 					<small class="form-text text-danger" th:if="${#fields.hasErrors('razonsocial')}" th:errors="*{razonsocial}"></small>
 										
@@ -69,7 +43,7 @@
 					<input type="text" class="form-control" th:field="*{direccion}">
 				</div>
 				<div>
-					<label class="form-label">Telefono</label>
+					<label class="form-label">Teléfono</label>
 					<input type="text" class="form-control" th:field="*{celular}">
 				</div>
 				<input type="submit" class="btn btn-primary mt-2" value="Crear Cliente">
